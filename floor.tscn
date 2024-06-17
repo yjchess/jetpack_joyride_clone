@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://csxexw5ela73j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cytoq"]
+bg_color = Color(0, 0, 0, 0.678431)
+border_width_top = 22
+border_color = Color(0, 0, 0, 0.960784)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6cnr"]
+size = Vector2(1152, 26)
+
+[node name="Floor" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Panel" type="Panel" parent="Sprite2D"]
+offset_top = 609.0
+offset_right = 1152.0
+offset_bottom = 649.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cytoq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(575, 635)
+shape = SubResource("RectangleShape2D_x6cnr")

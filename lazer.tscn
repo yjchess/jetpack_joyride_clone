@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://fivwcdice26q"]
+
+[ext_resource type="Script" path="res://lazer.gd" id="1_vmj27"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2ka2"]
+bg_color = Color(0.894118, 0.65098, 0.211765, 0.792157)
+border_width_left = 2
+border_width_right = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jfjr8"]
+bg_color = Color(0.862745, 0, 0.0941176, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pg1gb"]
+radius = 20.025
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18nks"]
+size = Vector2(12, 74)
+
+[node name="Lazer" type="CharacterBody2D" groups=["obstacle"]]
+script = ExtResource("1_vmj27")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Lazer" type="Panel" parent="Sprite2D"]
+offset_left = 14.0
+offset_top = 39.0
+offset_right = 26.0
+offset_bottom = 109.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w2ka2")
+
+[node name="Sphere" type="Panel" parent="Sprite2D"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jfjr8")
+
+[node name="Sphere2" type="Panel" parent="Sprite2D"]
+offset_top = 108.0
+offset_right = 40.0
+offset_bottom = 148.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jfjr8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(20, 20)
+shape = SubResource("CircleShape2D_pg1gb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(20, 74)
+shape = SubResource("RectangleShape2D_18nks")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(20, 128)
+shape = SubResource("CircleShape2D_pg1gb")

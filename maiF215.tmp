@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfjumyxqjoc7h"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_44iii"]
+[ext_resource type="PackedScene" uid="uid://csxexw5ela73j" path="res://floor.tscn" id="1_uvk7j"]
+[ext_resource type="PackedScene" uid="uid://bc70oo88613ta" path="res://joe.tscn" id="2_e3foa"]
+[ext_resource type="PackedScene" uid="uid://fivwcdice26q" path="res://lazer.tscn" id="3_xyxoh"]
+[ext_resource type="PackedScene" uid="uid://dmac5ndi4j38m" path="res://destructor.tscn" id="5_nmh6i"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_44iii")
+lazer = ExtResource("3_xyxoh")
+
+[node name="Floor" parent="." instance=ExtResource("1_uvk7j")]
+
+[node name="Player" parent="." instance=ExtResource("2_e3foa")]
+position = Vector2(30, 601)
+scale = Vector2(2, 2)
+
+[node name="Ceiling" parent="." instance=ExtResource("1_uvk7j")]
+position = Vector2(-1, -609)
+
+[node name="Destructor" parent="." instance=ExtResource("5_nmh6i")]
+
+[node name="LazerSpawner" type="Timer" parent="."]
+autostart = true
+
+[node name="Spawn Location One" type="Marker2D" parent="."]
+position = Vector2(1162, 440)
+
+[node name="Spawn Location Two" type="Marker2D" parent="."]
+position = Vector2(1162, 250)
+
+[node name="Spawn Location Three" type="Marker2D" parent="."]
+position = Vector2(1162, 60)
+
+[connection signal="body_entered" from="Destructor" to="." method="_on_destructor_body_entered"]
+[connection signal="timeout" from="LazerSpawner" to="." method="_on_lazer_spawner_timeout"]

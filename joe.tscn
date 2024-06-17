@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://bc70oo88613ta"]
+
+[ext_resource type="Script" path="res://joe.gd" id="1_8mqus"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tyigm"]
+size = Vector2(10, 21)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7ie0"]
+bg_color = Color(0, 0.470588, 0.588235, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7b4x"]
+bg_color = Color(0.713726, 0.631373, 0.160784, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+anti_aliasing_size = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogfy7"]
+bg_color = Color(0.211765, 0.211765, 0.211765, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_8mqus")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, -0.5)
+shape = SubResource("RectangleShape2D_tyigm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Panel" type="Panel" parent="Sprite2D"]
+texture_filter = 1
+offset_right = 10.0
+offset_bottom = 10.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_l7ie0")
+
+[node name="Panel2" type="Panel" parent="Sprite2D"]
+texture_filter = 1
+offset_top = -10.0
+offset_right = 10.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y7b4x")
+
+[node name="Panel3" type="Panel" parent="Sprite2D"]
+offset_left = -5.0
+offset_bottom = 6.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ogfy7")
