@@ -30,6 +30,7 @@ size = Vector2(12, 74)
 script = ExtResource("1_vmj27")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-20, -74)
 
 [node name="Lazer" type="Panel" parent="Sprite2D"]
 offset_left = 14.0
@@ -37,26 +38,28 @@ offset_top = 39.0
 offset_right = 26.0
 offset_bottom = 109.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_w2ka2")
+metadata/_edit_use_anchors_ = true
 
 [node name="Sphere" type="Panel" parent="Sprite2D"]
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_jfjr8")
+metadata/_edit_use_anchors_ = true
 
 [node name="Sphere2" type="Panel" parent="Sprite2D"]
 offset_top = 108.0
 offset_right = 40.0
 offset_bottom = 148.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_jfjr8")
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(20, 20)
+position = Vector2(0, -54)
 shape = SubResource("CircleShape2D_pg1gb")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(20, 74)
 shape = SubResource("RectangleShape2D_18nks")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2(20, 128)
+position = Vector2(0, 54)
 shape = SubResource("CircleShape2D_pg1gb")

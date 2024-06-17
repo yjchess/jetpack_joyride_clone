@@ -29,11 +29,15 @@ func _on_lazer_death():
 
 func _on_lazer_spawner_timeout():
 	var spawns = [$"Spawn Location One",$"Spawn Location Two",$"Spawn Location Three"]
+	var rotations = [0, 45, 135]
 	var spawn = randi_range(0,2)
+	var rotation = randi_range(0,2)
+	
 	
 	var lazer_scene = lazer.instantiate()
 	lazer_scene.connect("death",_on_lazer_death)
 	lazer_scene.position = spawns[spawn].position
+	lazer_scene.rotation_degrees = rotations[rotation]
 	get_parent().add_child(lazer_scene) # Add the instantiated laser to the scene tree
 
 
@@ -41,6 +45,7 @@ func _on_hud_start():
 	$LazerSpawner.start()
 	$ScoreTimer.start()
 	$HUD.reset_score()
+	score = 0
 	pass # Replace with function body.
 
 

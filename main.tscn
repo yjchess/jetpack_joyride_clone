@@ -26,13 +26,13 @@ position = Vector2(-1, -609)
 wait_time = 2.0
 
 [node name="Spawn Location One" type="Marker2D" parent="."]
-position = Vector2(1162, 440)
+position = Vector2(1162, 520)
 
 [node name="Spawn Location Two" type="Marker2D" parent="."]
-position = Vector2(1162, 250)
+position = Vector2(1162, 330)
 
 [node name="Spawn Location Three" type="Marker2D" parent="."]
-position = Vector2(1162, 60)
+position = Vector2(1162, 120)
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
