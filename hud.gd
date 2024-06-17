@@ -25,3 +25,6 @@ func unhide():
 	$Message.show()
 	$Button.show()
 	$Button.disabled = false
+	
+func reset_score():
+	$Score.text = "distance (m):"

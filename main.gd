@@ -40,6 +40,7 @@ func _on_lazer_spawner_timeout():
 func _on_hud_start():
 	$LazerSpawner.start()
 	$ScoreTimer.start()
+	$HUD.reset_score()
 	pass # Replace with function body.
 
 

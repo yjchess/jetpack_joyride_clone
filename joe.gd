@@ -15,6 +15,12 @@ func _physics_process(delta):
 		if Input.is_action_pressed("jetpack"):
 		#if Input.is_action_just_pressed("jetpack"):
 			velocity.y = -300
+			$GPUParticles2D.emitting = true
+			$GPUParticles2D2.emitting = true
+		
+		else:
+			$GPUParticles2D.emitting = false
+			$GPUParticles2D2.emitting = false
 
 	else:
 		velocity = Vector2.ZERO

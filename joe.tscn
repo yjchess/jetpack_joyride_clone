@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bc70oo88613ta"]
+[gd_scene load_steps=7 format=3 uid="uid://bc70oo88613ta"]
 
 [ext_resource type="Script" path="res://joe.gd" id="1_8mqus"]
 
@@ -34,6 +34,17 @@ border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 4
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qvfqq"]
+emission_shape = 1
+emission_sphere_radius = 2.0
+particle_flag_disable_z = true
+spread = 65.0
+gravity = Vector3(-10, 50, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 4.0
+scale_max = 4.0
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_8mqus")
 
@@ -59,3 +70,15 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_y7b4x")
 offset_left = -5.0
 offset_bottom = 6.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ogfy7")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(0.729412, 0.203922, 0, 1)
+position = Vector2(-1, 7)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_qvfqq")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+modulate = Color(0.729412, 0.203922, 0, 1)
+position = Vector2(-4, 7)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_qvfqq")
