@@ -39,11 +39,12 @@ emission_shape = 1
 emission_sphere_radius = 2.0
 particle_flag_disable_z = true
 spread = 65.0
-gravity = Vector3(-10, 50, 0)
+gravity = Vector3(-100, 50, 0)
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
-scale_min = 4.0
-scale_max = 4.0
+angle_max = 720.0
+scale_min = 7.0
+scale_max = 7.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_8mqus")

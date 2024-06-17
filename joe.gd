@@ -17,11 +17,19 @@ func _physics_process(delta):
 			velocity.y = -300
 			$GPUParticles2D.emitting = true
 			$GPUParticles2D2.emitting = true
-		
+			
+			if self.rotation_degrees <45:
+				self.rotation_degrees +=5
+			
 		else:
 			$GPUParticles2D.emitting = false
 			$GPUParticles2D2.emitting = false
-
+			if self.rotation_degrees >10:
+				self.rotation_degrees -=1
+		
+		if self.is_on_floor():
+			self.rotation_degrees = 0
+		
 	else:
 		velocity = Vector2.ZERO
 	
